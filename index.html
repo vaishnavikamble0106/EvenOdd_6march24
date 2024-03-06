@@ -1,0 +1,75 @@
+<html>
+<head>
+	<title> EvenOdd App </title>
+	<style>
+		*{font-size:50px; font-family:Calibri;}
+		body {background-color: lightpink;}
+	</style>
+	<script>
+		function check()
+		{
+			event.preventDefault();
+			let num = document.getElementById("num");
+			let msg = document.getElementById("msg");
+			let action = document.activeElement.value;
+		
+			if(num.value == "")
+			{
+				alert("number is empty");
+				msg.innerHTML = "";
+				num.focus();
+				return;
+			}
+			
+			let n = parseInt(num.value);
+			if (action == "Method1")
+			{
+				let res = n % 2 == 0 ? "even1" : "odd1";
+				msg.innerHTML = res;
+			}
+			else if (action == Method2)
+			{
+				if (n % 2 == 0)
+					msg.innnerHTML = "even2";
+				else
+					msg.innerHTML = "odd2";
+			}
+			else if (action == Method3)
+			{
+				switch(n % 2)
+				{
+				case 0 : 	msg.innerHTML = "even3";	break;
+				case 1 : 	msg.innerHTML = "odd3";		break;
+				case -1 : 	msg.innerHTML = "odd3";		break;
+				}
+			}
+		}
+
+
+
+	</script>
+</head>
+
+<body>
+<center>
+	<h1> EvenOdd App </h1>
+	<form onsubmit = "check()">
+		<input type = "number" placeholder= "enter integer" id="num"/>
+		<br><br>
+		<input type = "submit" value="Method1"/>
+		<input type = "submit" value="Method2"/>
+		<input type = "submit" value="Method3"/>
+	</form>
+	<h2 id= "msg"/>
+</center>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
